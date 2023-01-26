@@ -32,7 +32,7 @@ public class ShowController {
 	 public List<Show> getShowsFromMovieid(@PathVariable("id") int movieid){
 		 List<Show> shows = showService.getShowsFromMovieid(movieid);
 		 
-		 return shows.stream().collect(Collectors.toSet()).stream().toList();
+		 return shows;
 		 
 	}
 		 
@@ -40,7 +40,7 @@ public class ShowController {
 		 public List<Show> getShowsFromMovieidAndTheaterId(@PathVariable("movieid") int movieid,@PathVariable("theatreId") int theaterId){
 			 List<Show> shows = showService.getShowsFromMovieidAndTheaterId(movieid, theaterId);
 			 
-			 return shows.stream().collect(Collectors.toSet()).stream().toList();
+			 return shows;
 		 }
 		
 		

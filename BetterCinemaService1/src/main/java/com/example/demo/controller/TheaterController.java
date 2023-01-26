@@ -43,6 +43,6 @@ public class TheaterController {
 	 public List<Theater> getMoviesFromTheater(@PathVariable("movieid") int movieid){
 		 List<Theater> theater = theatreService.getTheatreFromMovieid(movieid);
 		 
-		 return theater.stream().collect(Collectors.toSet()).stream().toList();
+		 return theater;
 	 }
 }

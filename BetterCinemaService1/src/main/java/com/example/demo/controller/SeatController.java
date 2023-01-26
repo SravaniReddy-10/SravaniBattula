@@ -25,7 +25,7 @@ public class SeatController {
 	@GetMapping("/getSeats/{showid}")
 	public List<Seats> getSeats(@PathVariable("showid") Integer showid){
 		List<Seats> seats = seatService.getSeats(showid);
-		return seats.stream().collect(Collectors.toSet()).stream().toList();
+		return seats;
 		
 	}
 }

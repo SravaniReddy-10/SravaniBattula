@@ -49,17 +49,12 @@ public class MovieController {
 	        return saveMovie;
 	 }
 	 
-	@GetMapping("/getMoviesFromTheater/{theaterId}")
-	 public List<Movie> getMoviesFromTheater(@PathVariable("theaterId") int theaterId){
-		 List<Movie> movies = movieService.getMoviesFromTheatre(theaterId);
-		 
-		 return movies.stream().collect(Collectors.toSet()).stream().toList();
-	 }
+	
 	
 	@GetMapping("/SearchByTime/{time}")
 	public List<Movie> SearchByTime(@PathVariable("time") String time){
 		List<Movie> movies = movieService.getMoviesByTime(time);
-		return movies.stream().collect(Collectors.toSet()).stream().toList();
+		return movies;
 		
 	}
 	 

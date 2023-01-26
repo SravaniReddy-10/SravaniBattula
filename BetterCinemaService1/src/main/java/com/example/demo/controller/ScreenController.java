@@ -23,13 +23,9 @@ public class ScreenController {
 	 public List<Screen> getScreenFromTheater(@PathVariable("theaterId") int theaterId){
 		 List<Screen> screen = screenService.getScreenFromTheater(theaterId);
 		 
-		 return screen.stream().collect(Collectors.toSet()).stream().toList();
+		 return screen;
 	 }
 	
-	@GetMapping("/getScreenFromShowIdAndTime/{showid}/{time}")
-	 public Screen getScreenFromShowIdAndTime(@PathVariable("showid") int showid , @PathVariable("time") String time){
-		  return screenService.getScreenFromShowIdAndTime(showid, time);
-		 
-	 }
+	
 }
 

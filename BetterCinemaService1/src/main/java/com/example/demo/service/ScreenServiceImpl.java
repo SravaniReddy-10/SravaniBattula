@@ -14,13 +14,10 @@ public class ScreenServiceImpl {
 	@Autowired
 	private ScreenRepository screenRepo;
 	
-	 public List<Screen> getScreenFromTheater(Integer theatreId){
-		 List<Screen> screen = screenRepo.getScreensFromTheater(theatreId);
+	 public List<Screen> getScreenFromTheater(Integer theaterId){
+		 List<Screen> screen = screenRepo.getScreensFromTheater(theaterId);
 		 return screen;
 	 }
 
-	 public Screen getScreenFromShowIdAndTime(Integer showid,String time){
-		 Screen screen = screenRepo.getScreenFromShowIdAndTime(showid, time);
-		 return screen;
-	 }
+	
 }

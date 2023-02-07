@@ -19,7 +19,7 @@ public class BookingController {
 	private BookingServiceImpl bookingService;
 
 	@GetMapping("/user/{userName}/booking")
-	public ResponseEntity<List<Booking>> getBookingsOfUser(@PathVariable("username") String userName) {
+	public ResponseEntity<List<Booking>> getUserBookings(@PathVariable("username") String userName) {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.getForEntity("http://localhost:8082/api/user/{userName}", User.class);
 		List<Booking> results = bookingService.getBooking(userName);

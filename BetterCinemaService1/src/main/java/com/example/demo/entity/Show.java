@@ -35,6 +35,7 @@ public class Show {
 	@JoinColumn(name = "shbkid_fk", referencedColumnName = "showId")
 	private List<Booking> bookings;
 
+	
 	public String getDay() {
 		return day;
 	}

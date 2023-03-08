@@ -26,14 +26,30 @@ public class Show {
 	private int showId;
 	private String day;
 	private String time;
+	private String startTime;
+	private String endTime;
 	
+	public String getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+
+	public String getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+
 	@OneToMany(targetEntity = ShowSeatMapping.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "showid_fk", referencedColumnName = "showId")
 	private List<ShowSeatMapping> showSeatMappings;
 	
-	@OneToMany(targetEntity = Booking.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "shbkid_fk", referencedColumnName = "showId")
-	private List<Booking> bookings;
+	
 
 	
 	public String getDay() {

@@ -28,20 +28,7 @@ public class ShowController {
 	@Autowired
 	private MovieRepository movieRepo;
 	
-	@GetMapping("/getShowFromMovie/{id}")
-	 public List<Show> getShowsFromMovieid(@PathVariable("id") int movieid){
-		 List<Show> shows = showService.getShowsFromMovieid(movieid);
-		 
-		 return shows;
-		 
-	}
-		 
-		 @GetMapping("/getShowFromMovieTheater/{movieId}/{theaterId}")
-		 public List<Show> getShowsFromMovieidAndTheaterId(@PathVariable("movieid") int movieid,@PathVariable("theatreId") int theaterId){
-			 List<Show> shows = showService.getShowsFromMovieidAndTheaterId(movieid, theaterId);
-			 
-			 return shows;
-		 }
+	
 		
 		
 		@GetMapping("/getMovieByTime/{time}")
@@ -58,6 +45,14 @@ public class ShowController {
             return movieTime;
 		
 		}	
+		
+		
+		@GetMapping("/getShowByMovies/{movieId}")
+		public List<Show> getShowsMovie(@PathVariable("movieId") String movieId){
+			List<Show> shows = showService.getShowsByMovie(movieId);
+			return shows;
+		}
+		
 		
 		
 	

@@ -2,11 +2,15 @@ package com.example.demo.service;
 
 import java.util.List;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Exception.BussinessException;
-import com.example.demo.Exception.NoSuchElementException;
+
+
+import com.example.demo.Exception.MovieNotFoundException;
+
 import com.example.demo.entity.Movie;
 import com.example.demo.repository.MovieRepository;
 
@@ -17,20 +21,22 @@ public class MovieServiceImpl {
 	private MovieRepository movieRepo;
 	
 
-    public Movie getMoviesByTitle(String title){
-    Movie m = movieRepo.findByTitle(title);
-    if(m == null) {
-    throw new BussinessException("no movie with title =" +title +"found");
-    
-    }
-    return m;
-    }
+	public Movie getMoviesByTitle(String title){
+	    Movie m = movieRepo.findByTitle(title);
+	    if(m == null) {
+	    throw new MovieNotFoundException("no movie with title =" +title +"found");
+	    
+	    }
+	    return m;
+	    }
+	    
 	
     public Movie getMovieById(Integer id) {
 		return movieRepo.findById(id).orElseThrow(
-				() -> new NoSuchElementException("No Movie found with id =" +id) );	 
+				() -> new MovieNotFoundException("No Movie found with id =" +id) );	 
 	}
 	
+   
 	
 	public List<Movie> getAllMovies() {
 		List<Movie> movies = movieRepo.findAll();
@@ -48,9 +54,14 @@ public class MovieServiceImpl {
 	 
 	 public List<Movie> getMoviesByTime(String time){
 			List<Movie> movies = movieRepo.findMovieByTime(time);
+			if(movies.isEmpty()) {
+		    	throw new MovieNotFoundException("no movie Found at this time = "+time);
+		    }
 			return movies;
 			
 		}
+	 
+	 	
 
 }
 

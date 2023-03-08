@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class MovieController {
         return movieService.getMoviesByTitle(title);
     }
 	
-	
+
 	//byId
 	@GetMapping("/movies/{id}")
 	public Movie getMovieById(@PathVariable Integer id) {

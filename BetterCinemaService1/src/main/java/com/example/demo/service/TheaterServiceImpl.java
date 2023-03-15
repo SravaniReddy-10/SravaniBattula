@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 
-import com.example.demo.Exception.TheaterNotFoundException;
+import com.example.demo.Exception.TheatersException;
 import com.example.demo.entity.Movie;
 import com.example.demo.entity.Theater;
 import com.example.demo.repository.TheaterRepository;
@@ -35,7 +35,7 @@ public class TheaterServiceImpl {
 	
 	public Theater getTheatreById(Integer id) {
 		return theaterRepo.findById(id).orElseThrow(
-				() -> new TheaterNotFoundException("No Theater found with id =" +id) );	
+				() -> new TheatersException("No Theater found with id =" +id) );	
 	}
 	
 	 public List<Theater> getTheatreFromMovieid(Integer movieid){

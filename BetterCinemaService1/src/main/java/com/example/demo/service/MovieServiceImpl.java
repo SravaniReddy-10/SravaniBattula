@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 
 
-import com.example.demo.Exception.MovieNotFoundException;
+import com.example.demo.Exception.MoviesException;
 
 import com.example.demo.entity.Movie;
 import com.example.demo.repository.MovieRepository;
@@ -24,7 +24,7 @@ public class MovieServiceImpl {
 	public Movie getMoviesByTitle(String title){
 	    Movie m = movieRepo.findByTitle(title);
 	    if(m == null) {
-	    throw new MovieNotFoundException("no movie with title =" +title +"found");
+	    throw new MoviesException("no movie with title =" +title +"found");
 	    
 	    }
 	    return m;
@@ -33,7 +33,7 @@ public class MovieServiceImpl {
 	
     public Movie getMovieById(Integer id) {
 		return movieRepo.findById(id).orElseThrow(
-				() -> new MovieNotFoundException("No Movie found with id =" +id) );	 
+				() -> new MoviesException("No Movie found with id =" +id) );	 
 	}
 	
    
@@ -55,7 +55,7 @@ public class MovieServiceImpl {
 	 public List<Movie> getMoviesByTime(String time){
 			List<Movie> movies = movieRepo.findMovieByTime(time);
 			if(movies.isEmpty()) {
-		    	throw new MovieNotFoundException("no movie Found at this time = "+time);
+		    	throw new MoviesException("no movie Found at this time = "+time);
 		    }
 			return movies;
 			

@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.Exception.ShowNotFoundException;
+import com.example.demo.Exception.ShowsException;
 import com.example.demo.entity.Movie;
 import com.example.demo.entity.Show;
 import com.example.demo.repository.ShowRepository;
@@ -29,7 +29,7 @@ public class ShowServiceImpl {
 	public List<Show> getShowsByMovie(String movieid){
 		List<Show> shows = showRepo.getShows(movieid);
 		if(shows.isEmpty()) {
-	    	throw new ShowNotFoundException("no shows with this movieId =" + movieid  +"found");
+	    	throw new ShowsException("no shows with this movieId =" + movieid  +"found");
 	    }
 	    
 		return shows;

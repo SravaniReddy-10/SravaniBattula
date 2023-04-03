@@ -30,12 +30,12 @@ public class Theater {
 	@JoinColumn(name = "thscid_fk", referencedColumnName = "theaterId")
 	private List<Screen> screens;
 
-	public String getCity() {
-		return city;
+	public int getTheaterId() {
+		return theaterId;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setTheaterId(int theaterId) {
+		this.theaterId = theaterId;
 	}
 
 	public String getTheaterName() {
@@ -46,5 +46,14 @@ public class Theater {
 		this.theaterName = theaterName;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	
 
 }

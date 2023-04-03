@@ -35,22 +35,6 @@ public class Screen {
 	@JoinColumn(name = "scseid__fk", referencedColumnName = "screenId")
 	private List<Seats> seats;
 
-	public String getScreenName() {
-		return screenName;
-	}
-
-	public void setScreenName(String screenName) {
-		this.screenName = screenName;
-	}
-
-	public int getTotalNoOfSeats() {
-		return totalNoOfSeats;
-	}
-
-	public void setTotalNoOfSeats(int totalNoOfSeats) {
-		this.totalNoOfSeats = totalNoOfSeats;
-	}
-
-
+	
 	
 }

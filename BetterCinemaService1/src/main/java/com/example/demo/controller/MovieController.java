@@ -1,8 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
-
-
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +52,8 @@ public class MovieController {
 	
 	
 	@GetMapping("/SearchByTime/{time}")
-	public List<Movie> SearchByTime(@PathVariable("time") String time){
-		List<Movie> movies = movieService.getMoviesByTime(time);
+	public Set<Movie> SearchByTime(@PathVariable("time") String time){
+		Set<Movie> movies = movieService.getMoviesByTime(time);
 		return movies;
 		
 	}

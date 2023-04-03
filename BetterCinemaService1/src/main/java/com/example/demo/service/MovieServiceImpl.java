@@ -1,6 +1,9 @@
 package com.example.demo.service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 
 
 
@@ -52,12 +55,20 @@ public class MovieServiceImpl {
 		 return movies;
 	 }
 	 
-	 public List<Movie> getMoviesByTime(String time){
+	 public Set<Movie> getMoviesByTime(String time){
 			List<Movie> movies = movieRepo.findMovieByTime(time);
+			Set <Movie> movie = new HashSet <Movie>();
+			for (Movie i:movies) {
+				movie.add(i);
+				
+				
+			}
+			
 			if(movies.isEmpty()) {
 		    	throw new MoviesException("no movie Found at this time = "+time);
 		    }
-			return movies;
+			return movie;
+			
 			
 		}
 	 

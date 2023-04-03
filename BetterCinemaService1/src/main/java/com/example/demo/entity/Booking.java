@@ -34,29 +34,6 @@ public class Booking {
 	@JoinColumn(name = "ssmId_fk", referencedColumnName = "bookingId")
 	private List<ShowSeatMapping> showSeatMappings;
 
-	public int getBookingId() {
-		return bookingId;
-	}
-
-	public void setBookingId(int bookingId) {
-		this.bookingId = bookingId;
-	}
-
-	public int getNumberOfSeats() {
-		return numberOfSeats;
-	}
-
-	public void setNumberOfSeats(int numberOfSeats) {
-		this.numberOfSeats = numberOfSeats;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
 	
 	
 	

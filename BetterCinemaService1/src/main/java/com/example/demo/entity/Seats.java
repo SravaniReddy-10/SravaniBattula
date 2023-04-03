@@ -29,13 +29,7 @@ public class Seats {
 	@JoinColumn(name = "stid_fk", referencedColumnName = "seatId")
 	private List<ShowSeatMapping> showSeatMapping;
 
-	public int getSeatNumber() {
-		return seatNumber;
-	}
-
-	public void setSeatNumber(int seatNumber) {
-		this.seatNumber = seatNumber;
-	}
+	
 
 	
 
